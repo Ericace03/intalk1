@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Számoló</h1>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="post" action="/Home/Counter">
+                <input type="number" name="number1" placeholder="Első szám">
+                <input type="number" name="number2" placeholder="Második szám">
+                <div class="my-2"></div>
+                <div class="text-center">
+                    <select name="operation" class="mb-2">
+                        <option value="add">Összeadás</option>
+                        <option value="subtract">Kivonás</option>
+                        <option value="multiply">Szorzás</option>
+                        <option value="divide">Osztás</option>
+                    </select>
+                    <button type="submit" class="text-center">Számol</button>
+                </div>
+                <div class="my-2"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.Message as string != null)
+{
+    <div class="text-center">
+            <p>@ViewBag.Message</p>
+    </div>
+}
